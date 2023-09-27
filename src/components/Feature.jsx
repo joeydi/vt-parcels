@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Tooltip } from "react-tooltip";
 
 const tilesets = {
     "chittenden_county_parcels-2ztecj": {
