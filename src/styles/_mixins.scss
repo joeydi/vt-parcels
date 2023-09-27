@@ -1,0 +1,21 @@
+@mixin fluid-sizing($property, $min-vw, $max-vw, $min-size, $max-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-size);
+    $u4: unit($max-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            #{$property}: $min-size;
+            @media screen and (min-width: $min-vw) {
+                #{$property}: calc(
+                    #{$min-size} + #{strip-unit($max-size - $min-size)} *
+                        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+                );
+            }
+            @media screen and (min-width: $max-vw) {
+                #{$property}: $max-size;
+            }
+        }
+    }
+}

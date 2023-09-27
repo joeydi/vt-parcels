@@ -1,0 +1,137 @@
+.sidebar {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-height: calc(100% - 40px);
+    padding: 20px;
+    border-radius: 4px;
+    background: $white;
+    box-shadow: $box-shadow;
+
+    .results {
+        overflow: auto;
+    }
+
+    .search {
+        margin-bottom: 20px;
+    }
+
+    mapbox-search-box {
+        width: 100%;
+    }
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 36px;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        line-height: 1.4;
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        border-bottom: 1px solid $dark-tan;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background-color: $white;
+            border: 1px solid $dark-tan;
+            border-radius: 50%;
+            transition: background-color 0.25s;
+
+            &:hover {
+                background-color: $dark-tan;
+            }
+
+            img {
+                display: block;
+            }
+        }
+
+        a {
+            text-decoration: underline #999;
+        }
+
+        span[data-tooltip-id] {
+            text-decoration: underline dotted #999;
+        }
+    }
+
+    .layer-type {
+        width: 14px;
+        height: 14px;
+        background-color: currentColor;
+
+        &.point {
+            border-radius: 8px;
+        }
+
+        &.polygon {
+            border-radius: 3px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .feature {
+        margin-bottom: 1rem;
+        background-color: $light-tan;
+        border: 1px solid $dark-tan;
+        border-radius: 3px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .field {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 5px 10px;
+
+        a {
+            text-decoration: underline;
+        }
+
+        span[data-tooltip-id] {
+            text-decoration: underline dotted;
+        }
+    }
+
+    .field-name {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        color: $teal-2;
+    }
+
+    .field-value {
+        text-align: right;
+        font-size: 13px;
+        font-weight: 600;
+        color: #666;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+}
+
+.tooltip {
+    z-index: 100;
+    max-width: 300px;
+    font-size: 13px !important;
+    font-weight: 500;
+}
