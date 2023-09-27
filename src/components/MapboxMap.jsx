@@ -20,10 +20,6 @@ export default function MapboxMap({ map, setMap, location, setLocation }) {
             center: [-73.16, 44.47],
             zoom: 12,
             maxZoom: 19,
-            // maxBounds: [
-            //     [-90.246, 29.7953],
-            //     [-89.8728, 30.1002],
-            // ],
         });
 
         marker.current = new mapboxgl.Marker({ color: "#4d8396" });
