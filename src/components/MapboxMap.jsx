@@ -15,21 +15,23 @@ export default function MapboxMap({ map, setMap, location, setLocation }) {
 
         const mapboxMap = new mapboxgl.Map({
             container: node,
-            accessToken: "pk.eyJ1IjoiY2FzdWFsYXN0cm9uYXV0IiwiYSI6ImNsbXppeTRiNTEwZmQybGxjbjJwcWQ1NGkifQ.RBFaqoShtUQLEO39XM3-iw",
-            style: "mapbox://styles/casualastronaut/clmzi85im05yn01maecoi4vpu",
-            center: [-90.0714, 29.9609],
+            accessToken: "pk.eyJ1Ijoiam9leWRpIiwiYSI6IlM5SE1BT0kifQ.gp3XWWKTK3xpw6dkg-zeUg",
+            style: "mapbox://styles/joeydi/cln13e1r806cw01qrbyj99cnq",
+            center: [-73.16, 44.47],
             zoom: 12,
             maxZoom: 19,
-            maxBounds: [
-                [-90.246, 29.7953],
-                [-89.8728, 30.1002],
-            ],
+            // maxBounds: [
+            //     [-90.246, 29.7953],
+            //     [-89.8728, 30.1002],
+            // ],
         });
 
         marker.current = new mapboxgl.Marker({ color: "#4d8396" });
 
         mapboxMap.on("click", (e) => {
             setLocation(e.lngLat);
+            console.log("click", e.lngLat);
+            console.log("center", mapboxMap.getCenter());
         });
 
         setMap(mapboxMap);

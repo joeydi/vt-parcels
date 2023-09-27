@@ -12,10 +12,10 @@ export default function Search({ map, setLocation }) {
                 accessToken="pk.eyJ1IjoiY2FzdWFsYXN0cm9uYXV0IiwiYSI6ImNsbXppeTRiNTEwZmQybGxjbjJwcWQ1NGkifQ.RBFaqoShtUQLEO39XM3-iw"
                 map={map}
                 options={{
-                    proximity: [-90.03659, 29.96653],
+                    proximity: [-73.16, 44.47],
                     bbox: [
-                        [-90.16, 29.873],
-                        [-89.6317, 30.179],
+                        [-73.13, 44.39],
+                        [-72.74, 44.63],
                     ],
                 }}
                 value=""
